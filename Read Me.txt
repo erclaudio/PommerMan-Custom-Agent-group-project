@@ -1,0 +1,28 @@
+Steps to run the agent:
+
+1\ Make sure that the Pommerman framework is working.
+
+2\ move the file "PommermanCustomAgent" in the "src\players" directory.
+
+3\ open the run.java class
+
+4\ paste those two lines at the top: 
+
+import players.PommermanCustomAgent.CustomMCTSParams;
+import players.PommermanCustomAgent.CustomPlayer;
+
+5\ in run.java class search for the switch statement that initializes the already implemented players.
+
+6\ when you find it, copy and paste the code below after the last "case" in the code.
+
+case 7 :
+
+                        CustomMCTSParams param = new CustomMCTSParams();
+                        param.stop_type = param.STOP_TIME;
+                        p = new CustomPlayer(seed,playerID++,param);
+                        playerStr[i-4] = "hybridAgent";
+break;
+
+
+ps: I choose the number 7 because its my luck number. if you change it our agent won't win the competition :).
+
